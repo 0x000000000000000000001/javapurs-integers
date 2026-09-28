@@ -1,7 +1,7 @@
     public static Object fromNumberImpl = (java.util.function.Function<Object, Object>) (just) -> (java.util.function.Function<Object, Object>) (nothing) -> (java.util.function.Function<Object, Object>) (n) -> {
-        Double d = (Double) n;
-        if (d.intValue() == d) {
-            return ((java.util.function.Function<Object, Object>) just).apply(d.intValue());
+        double d = ((Number) n).doubleValue();
+        if ((int) d == d) {
+            return ((java.util.function.Function<Object, Object>) just).apply((int) d);
         }
         return nothing;
     };
